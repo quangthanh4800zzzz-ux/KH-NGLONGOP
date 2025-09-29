@@ -1,1 +1,2543 @@
+// ==UserScript==
+// @name            KHỦNG LONG RỚT MẠNG 🤫🤫🤫🤫
+// @namespace       http://tampermonkey.net/
+// @version         07-22-2025__1.8.1
+// @icon            https://raw.githubusercontent.com/quangthanh4800zzzz-ux/KH-NGLONGOP/refs/heads/main/SIX%20SEVEN%2067.jpg
+// @description     CHÚC BÚ ĐẪM!!!!!!!!!!!! 🥵🥵🥵🥵🥵🥵
+// @match        *://chromedino.com/*
+// @match        *://tuckercraig.com/dino/*
+// @match        *://trex-runner.com/*
+// @match        *://dino-chrome.com/*
+// @match        *://dinorunner.com/*
+// @match        *://googledino.com/*
+// @grant        GM_xmlhttpRequest
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @author       THÀNH ĐB
+// @copyright    THÀNH ĐB
+// @license      Apache-2.0
+// @run-at       document-idle
+// @tag          game
+// @tag          bot
+// @tag          custom
+// @tag          themes
+// @tag          immortal
+// @tag          dino
+// @tag          play
+// ==/UserScript==
+(async function() {
 
+
+    const currentURL = window.location.href;
+
+    if (currentURL.includes(".png")) {
+    } else {
+
+        let currentLang = await GM_getValue('selectedLang', 'vn');
+
+        function translate(key) {
+            const translations = {
+                'welcome': {
+                    'vn': 'BY CAO QUẢNG THÀNH ZZZZ;)',
+                },
+                'shortcutsTitle': {
+                    'vn': 'Phím tắt',
+                },
+                'jumpDescription': {
+                    'vn': 'ĐỘ CAO NHẢY KHỦNG LONG, BTH 10',
+                },
+                'jumpText': {
+                    'vn': 'Điều chỉnh nhảy',
+                },
+                'speedDescription': {
+                    'vn': 'TỐC ĐỘ, BTH 10',
+                },
+                'speedText': {
+                    'vn': 'Điều chỉnh tốc độ',
+                },
+                'immortalityDescription': {
+                    'vn': 'THẦN',
+                },
+                'immortalityText': {
+                    'vn': 'BẤT TỬ',
+                },
+                'flyDescription': {
+                    'vn': 'BAY',
+                },
+                'flyText': {
+                    'vn': 'Đi Trên Không Khí',
+                },
+                'scoreDescription': {
+                    'vn': 'ĐIỂM',
+                },
+                'scoreText': {
+                    'vn': 'CHỈNH ĐIỂM',
+                },
+                'autoJumpDescription': {
+                    'vn': 'TỰ ĐỘNG NHẢY',
+                },
+                'autoJumpText': {
+                    'vn': 'ĐÃ BẬT AUTO JUMP',
+                },
+                'addScoreDescription': {
+                    'vn': '+1000 ĐIỂM',
+                },
+                'addScoreText': {
+                    'vn': 'Score + 1000',
+
+                },
+                'invisibleDescription': {
+                    'vn': 'Làm Khủng Long Tàng Hình!!!',
+                },
+                'invisibleText': {
+                    'vn': 'TÀNG HÌNH',
+                },
+                'breakDescription': {
+                    'vn': 'NGƯNG ĐỘNG THỜI GIAN',
+                },
+                'breakText': {
+                    'vn': 'NGƯNG',
+                },
+                'menuDescription': {
+                    'vn': 'TẮT/MỞ MENU',
+                },
+                'menuText': {
+                    'vn': 'TẮT/MỞ MENU',
+                },
+                'invalidJumpHeight': {
+                    'vn': "ĐIỀN VÔ ĐÂY",
+                },
+                'invalidSpeed': {
+                    'vn': "ĐIỀN VÔ ĐÂY",
+                },
+                'invalidIntegerScore': {
+                    'vn': "Không quá 999990",
+                },
+                'runnerInstanceNotAvailable': {
+                    'vn': "KO CHẠY ĐƯỢC",
+                },
+                'enterNewJumpHeight': {
+                    'vn': "ĐIỀN VÔ",
+                },
+                'enterNewScore': {
+                    'vn': "ĐIỀN VÔ, 999990 TỐI ĐA",
+                },
+                'theAir': {
+                    'vn': "TRÊN KHÔNG KHÍ",
+                },
+                'theGround': {
+                    'vn': "TRÊN ĐẤT",
+                },
+                'chooseSpeed': {
+                    'vn': "TỐC ĐỘ",
+                },
+                'menu': {
+                    'vn': "Menu",
+                },
+                'jumpHeight': {
+                    'vn': "ĐỘ CAO NHẢY",
+                },
+                'scorePlus': {
+                    'vn': "Score +",
+                },
+                'walkIn': {
+                    'vn': "ĐI",
+                },
+                'dinoTheme': {
+                    'vn': "Theme",
+                },
+                'optionsTitle': {
+                    'vn': "Options",
+                },
+                'shortcutsLabel': {
+                    'vn': "Shortcuts",
+                },
+                'infoLabel': {
+                    'vn': "Info",
+                },
+                'ratingLabel': {
+                    'vn': "ĐÁNH GIÁ",
+                },
+                'switchLabelLang': {
+                    'vn': "NGÔN NGỮ: có mỗi tiếng việt thôi xD",
+                },
+                'creditLabel': {
+                    'vn': "BY THÀNH ĐB",
+                },
+                'versionLabel': {
+                    'vn': "PHIÊN BẢN",
+                },
+                'installLabel': {
+                    'vn': "LƯỢT TẢI!!!!!!!!!!: 0 :((( ",
+                },
+                'color': {
+                    'vn': "COLOR",
+                },
+                'mario': {
+                    'vn': "Mario",
+                },
+                'trump': {
+                    'vn': "Trump",
+                },
+                'joker': {
+                    'vn': "Joker",
+                },
+                'batman': {
+                    'vn': "Batman",
+                },
+                'night': {
+                    'vn': "Night",
+                },
+                'squid_game': {
+                    'vn': "Squid Game",
+                },
+                'santa': {
+                    'vn': "Santa",
+                },
+                'halloween': {
+                    'vn': "Halloween",
+                },
+                'wednesday': {
+                    'vn': "Wednesday",
+                },
+                'naruto': {
+                    'vn': "Naruto",
+                },
+                'naruto2': {
+                    'vn': "Naruto 2",
+                },
+                'godzilla': {
+                    'vn': "Godzilla",
+                },
+                'cat': {
+                    'vn': "Cat",
+                },
+                'ninja': {
+                    'vn': "Ninja",
+                },
+                'classic': {
+                    'vn': "Classic",
+                },
+                'dontShowAgain': {
+                    'vn': " !KO HIỂN THỊ LẠI! ",
+                },
+                'infoGmail': {
+                    'vn': "!!!!VAR QUA GMAIL TAO OK!!!!",
+                },
+                'infoContact': {
+                    'vn': "ĐỀ XUẨT",
+                },
+                'OrLabel': {
+                    'vn': "HOẶC",
+                },
+                'link': {
+                    'vn': "vn",
+                },
+                'TileTermsLabel': {
+                    'vn': "ĐIỀU KHOẢN, KHÔNG CHẤP HÀNH CHẶT CHIM XẺO BƯỚM",
+                },
+                'TermsLabel': {
+                    'vn': `<br><h5><strong>1. Introduction</strong></h5>Welcome to DINOcheat, a script designed to customize the Google & Chromedinosaur game experience. Although the script's name contains terms such as <em>"hack"</em> and <em>"cheat"</em>, it isimportant to clarify that DINOcheat does not represent a true <strong>"hack"</strong> or <strong>"cheat"</strong> in amalicious sense. It is simply a set of fun features that allow users to adjust certain game parameters (such as speed,jump, or score). These features are intended to enhance the player's experience and are not illegal. DINOcheat isdesigned to be used in a private setting and should not be used on sites or platforms that do not agree with suchmodifications.<br><br><h5><strong>2. Data Collection</strong></h5>No personally identifiable data is collected. Only your preferences arestored locally by Tampermonkey:<br>• <b>Language</b>: the selected language is saved using <code>GM_setValue</code>.<br>• <b>Game Settings</b>: your settings (speed, theme, interface options, etc.) may be stored via <code>GM_setValue</code>and automatically applied on each use.<br>These data remain strictly local within Tampermonkey’s internal storage; we never use them outside the script ortransmit them to any server.<br><br><h5><strong>3. Use of Data</strong></h5>The stored information is used exclusively for:<br>• Adapting the interface to the chosen language.<br>• Applying your personalized game settings.<br>• Optimizing your user experience with DINOcheat.<br><br><b><h5>4. Third-Party Content</b></h5>Our script uses images and themes from external sources. These resources are linked to third-party websites andmay be subject to separate privacy policies. Here are the available themes and their corresponding links:<br><br>•<b>Classic</b>:<br> ◦ Image 1x: <a href='https://dino-chrome.com/static/images/1.png'target='_blank'>https://dino-chrome.com/static/images/1.png</a><br> ◦ Image 2x: <ahref='https://dino-chrome.com/static/images/2.png'target='_blank'>https://dino-chrome.com/static/images/2.png</a><br><br>• <b>Mario</b>:<br> ◦ Image 1x: <ahref='https://chromedino.com/assets/offline-sprite-1x-mario.png'target='_blank'>https://chromedino.com/assets/offline-sprite-1x-mario.png</a><br> ◦ Image 2x: <ahref='https://chromedino.com/assets/offline-sprite-2x-mario.png'target='_blank'>https://chromedino.com/assets/offline-sprite-2x-mario.png</a><br><br>• <b>Trump</b>:<br> ◦ Image 1x:<a href='https://dino-chrome.com/trumpino-game/trump1x.png'target='_blank'>https://dino-chrome.com/trumpino-game/trump1x.png</a><br> ◦ Image 2x: <ahref='https://dino-chrome.com/trumpino-game/trump2x.png'target='_blank'>https://dino-chrome.com/trumpino-game/trump2x.png</a><br><br>• <b>Joker</b>:<br> ◦ Image 1x: <ahref='https://chromedino.com/assets/joker1x.png' target='_blank'>https://chromedino.com/assets/joker1x.png</a><br> ◦Image 2x: <a href='https://chromedino.com/assets/joker2x.png'target='_blank'>https://chromedino.com/assets/joker2x.png</a><br><br>• <b>Batman</b>:<br> ◦ Image 1x: <ahref='https://chromedino.com/assets/batman1x.png' target='_blank'>https://chromedino.com/assets/batman1x.png</a><br>◦ Image 2x: <a href='https://chromedino.com/assets/batman2x.png'target='_blank'>https://chromedino.com/assets/batman2x.png</a><br><br>• <b>Night</b>:<br> ◦ Image 1x: <ahref='https://chromedino.com/assets/offline-sprite-1x-black.png'target='_blank'>https://chromedino.com/assets/offline-sprite-1x-black.png</a><br> ◦ Image 2x: <ahref='https://chromedino.com/assets/offline-sprite-2x-black.png'target='_blank'>https://chromedino.com/assets/offline-sprite-2x-black.png</a><br><br>• <b>Squid Game</b>:<br> ◦Image 1x: <a href='https://dinorunner.com/static/images/squid-game/squid_game1x.png'target='_blank'>https://dinorunner.com/static/images/squid-game/squid_game1x.png</a><br> ◦ Image 2x: <ahref='https://dinorunner.com/static/images/squid-game/squid_game2x.png'target='_blank'>https://dinorunner.com/static/images/squid-game/squid_game2x.png</a><br><br>• <b>Santa</b>:<br> ◦Image 1x: <a href='https://dinorunner.com/static/images/santa/offline-sprite-1x-santa.png'target='_blank'>https://dinorunner.com/static/images/santa/offline-sprite-1x-santa.png</a><br> ◦ Image 2x: <ahref='https://dinorunner.com/static/images/santa/offline-sprite-2x-santa.png'target='_blank'>https://dinorunner.com/static/images/santa/offline-sprite-2x-santa.png</a><br><br>•<b>Halloween</b>:<br> ◦ Image 1x: <ahref='https://dinorunner.com/static/images/halloween/offline-sprite-1x-halloween.png'target='_blank'>https://dinorunner.com/static/images/halloween/offline-sprite-1x-halloween.png</a><br> ◦ Image 2x:<a href='https://dinorunner.com/static/images/halloween/offline-sprite-2x-halloween.png'target='_blank'>https://dinorunner.com/static/images/halloween/offline-sprite-2x-halloween.png</a><br><br>•<b>Wednesday</b>:<br> ◦ Image 1x: <a href='https://dinorunner.com/static/images/wednesday/wednesday1x.png'target='_blank'>https://dinorunner.com/static/images/wednesday/wednesday1x.png</a><br> ◦ Image 2x: <ahref='https://dinorunner.com/static/images/wednesday/wednesday2x.png'target='_blank'>https://dinorunner.com/static/images/wednesday/wednesday2x.png</a><br><br>• <b>Naruto</b>:<br> ◦Image 1x: <a href='https://dinorunner.com/static/images/naruto/offline-sprite-1x-naruto.png'target='_blank'>https://dinorunner.com/static/images/naruto/offline-sprite-1x-naruto.png</a><br> ◦ Image 2x: <ahref='https://dinorunner.com/static/images/naruto/offline-sprite-2x-naruto.png'target='_blank'>https://dinorunner.com/static/images/naruto/offline-sprite-2x-naruto.png</a><br><br>• <b>Naruto2</b>:<br> ◦ Image 1x: <a href='https://trex-runner.com/img/offline-sprite-1x-naruto.png'target='_blank'>https://trex-runner.com/img/offline-sprite-1x-naruto.png</a><br> ◦ Image 2x: <ahref='https://trex-runner.com/img/offline-sprite-2x-naruto.png'target='_blank'>https://trex-runner.com/img/offline-sprite-2x-naruto.png</a><br><br>• <b>Godzilla</b>:<br> ◦ Image1x: <a href='https://dinorunner.com/static/images/godzilla/godzilla.png'target='_blank'>https://dinorunner.com/static/images/godzilla/godzilla.png</a><br> ◦ Image 2x: <ahref='https://dinorunner.com/static/images/godzilla/godzillax2.png'target='_blank'>https://dinorunner.com/static/images/godzilla/godzillax2.png</a><br><br>• <b>Cat</b>:<br> ◦ Image1x: <a href='https://dinosaur-game.io/game/nyancat/img/cat.png'target='_blank'>https://dinosaur-game.io/game/nyancat/img/cat.png</a><br> ◦ Image 2x: <ahref='https://dinosaur-game.io/game/nyancat/img/catx2.png'target='_blank'>https://dinosaur-game.io/game/nyancat/img/catx2.png</a><br><br>• <b>Ninja</b>:<br> ◦ Image 1x: <ahref='https://dnery.dev/t-rex-runner/assets/offline-sprite-1x.png'target='_blank'>https://dnery.dev/t-rex-runner/assets/offline-sprite-1x.png</a><br> ◦ Image 2x: <ahref='https://dnery.dev/t-rex-runner/assets/offline-sprite-2x.png'target='_blank'>https://dnery.dev/t-rex-runner/assets/offline-sprite-2x.png</a><br><br><b>Important:</b> Theseresources are exclusively intended for use on the websites mentioned above. Using these images outside of these sites isdiscouraged and at your own risk.<br><br><div><h5><strong>5. Data Security</strong></h5>We do not collect any personal data, so the issue of protecting sensitiveinformation does not arise. However, we encourage you to take precautions when using external services.<br><br><h5><strong>6. Changes to the Privacy Policy</strong></h5>We reserve the right to update or modify this PrivacyPolicy at any time. Any changes will be published on <ahref="https://github.com/quangthanh4800zzzz-ux/KH-NGLONGOP" target="_blank">this page</a>, andthe date of the last update will be indicated at the bottom of the section. We recommend that you review this pageregularly to stay informed of any changes.</div><br><div><h5><strong>7. User Rights</strong></h5>Since we do not collect any personal data, your rights of access,rectification, and deletion do not apply. Only your preferences (language and game settings) are stored viaTampermonkey. You can modify or reset them at any time from the script configuration panel of the Tampermonkeyuserscript manager extension.<br><br><h5><strong>8. Contact</strong></h5>If you have any questions or concerns about this privacy policy, please feelfree to contact us at the following address<ul><li>Email:quangthanh4800zzzz@gmail.com</li></ul></div><br><h5><strong>9. Misuse of the Script</strong></h5>It is strictly forbidden to use this script for malicious purposes orto use it on sites where such modifications are not allowed. Any use intended to disrupt, abuse, or manipulate platformsfraudulently (e.g., in multiplayer online games, paid services, or unauthorized modifications) is strictly prohibited.This script should only be used in a private context and must not alter games, services, or platforms in a way thatwould violate their terms of use.<br><br>We disclaim any responsibility in case of misuse of the script. The user issolely responsible for ensuring that their use complies with local laws and regulations, as well as the terms of use ofthird-party platforms. If in doubt about the proper use of the script, please consult the terms of use of the relevantplatforms or contact the team responsible for the script for clarification.<br><br><strong>For more information on theterms of use of the resources used, please consult the following links:</strong><br><ul><li><a href='https://dinorunner.com/help/terms-of-use/' target='_blank'>Terms and Conditions of the websitedinorunner.com</a></li><li><a href='https://dinorunner.com/help/privacy-policy/' target='_blank'>Privacy Policy of the websitedinorunner.com</a></li><li><a href='https://dinosaur-game.io/terms-of-service' target='_blank'>Terms and Conditions of the websitedinosaur-game.io</a></li><li><a href='https://trex-runner.com/privacy-policy/' target='_blank'>Privacy Policy of the websiteTRex-Runner.COM</a></li></ul><br><h5><strong>10. Third-Party Sites and Graphic Resources</strong></h5>The DINOcheat script uses images and themes fromseveral external sites. These resources are made available exclusively for use on the specific sites mentioned below. Weremind you that using these images outside of these sites may lead to legal consequences or violate copyright laws. Hereis the list of sites whose resources are used:<br><ul><li><strong>DinoRunner</strong>: Images from the themes Squid Game, Santa, Halloween, Wednesday, Naruto,Godzilla.<br>URL: <a href='https://dinorunner.com' target='_blank'>https://dinorunner.com</a></li><li><strong>ChromeDino</strong>: Images from the themes Classic, Joker, Batman, Night, Mario.<br>URL: <ahref='https://chromedino.com' target='_blank'>https://chromedino.com</a></li><li><strong>Trumpino Game</strong>: Image from the Trump theme.<br>URL: <a href='https://dino-chrome.com'target='_blank'>https://dino-chrome.com</a></li><li><strong>Dnery.dev</strong>: Images from the Ninja themes.<br>URL: <a href='https://dnery.dev/t-rex-runner'target='_blank'>https://dnery.dev/t-rex-runner</a></li><li><strong>Trex Runner (Naruto 2)</strong>: Image from the Naruto 2 theme.<br>URL: <ahref='https://trex-runner.com' target='_blank'>https://trex-runner.com</a></li><li><strong>Dinosaur Game</strong>: Image from the Cat theme.<br>URL: <a href='https://dinosaur-game.io'target='_blank'>https://dinosaur-game.io</a></li></ul><br><strong>Important</strong>: These images are exclusively intended for use on their respective sites. Any use ofthese images outside these platforms is highly discouraged and may result in legal action for copyright infringement.You must always respect the terms of use of each site and not use these resources for purposes other than those definedon the source sites. The links to the images used are specified in the Third-Party Content section.<br><br><h5><strong>11. Features of the DINOcheat Script</strong></h5>The DINOcheat script allows users to customize theirgameplay experience by adjusting various settings of the Google & Chrome dinosaur game. Here are the main featuresavailable:<br><ul><li><strong>Jump Height Adjustment</strong>: Allows you to modify the dinosaur's jump height to make it easier tonavigate through obstacles.</li><li><strong>Speed Adjustment</strong>: Lets you control the game's speed, offering a more or less challengingexperience based on the user's preferences.</li><li><strong>Invincibility</strong>: Makes the dinosaur invincible, preventing any collisions with obstacles,allowing uninterrupted play.</li><li><strong>Walk in the Air</strong>: Lets the dinosaur walk in the air, bypassing obstacles without needing toavoid them.</li><li><strong>Custom Score Choice</strong>: Allows the user to set a custom score for the game, adding a playfulelement to the experience.</li><li><strong>Auto-bot to Overcome Obstacles</strong>: An integrated bot that allows the dinosaur to automaticallyovercome obstacles without user intervention.</li><li><strong>Add 1000 Points to the Score</strong>: Allows adding 1000 points to the game score to simulate a betterresult.</li><li><strong>Invisible</strong>: Makes the dinosaur invisible, offering a different gameplay experience withoutshowing the character.</li><li><strong>Pause the Game</strong>: Allows pausing the game at any time, offering full control over the gameplay.</li></ul><br>These features are designed to enhance the personalized gameplay experience but should be used responsibly andin a private setting. Unauthorized use on third-party platforms or games is prohibited.<br><br><h5><strong>12. Modifications Made by the DINOcheat Script</strong></h5>The DINOcheat script directly modifies the gamepage by altering the behavior of certain features to customize the player's experience. Here is an overview of theactions performed by the script when injected into a page:<br><ul><li><strong>Modification of the DOM (Document Object Model)</strong>: The script modifies the HTML code of the pageto integrate new features and customize the game interface.</li><li><strong>Injection of New CSS Styles</strong>: Additional styles may be applied to the graphical interface tochange the game's appearance (e.g., modifying colors, element sizes, or displaying certain elements).</li><li><strong>Modification of the Game's JavaScript</strong>: The script alters the game's behavior by adjustinginternal variables (e.g., dinosaur movement speed, jump height, or invincibility). It also bypasses certaindefault behaviors (like game over) to give more control to the user.</li><li><strong>Adding Additional Features</strong>: The script allows adding new interactive options such as theability to pause the game, customize the score, or activate an invisible mode.</li><li><strong>Modification of Game Events</strong>: The script can intercept and modify game events, such as keyboardor mouse interactions, to enable actions like walking in the air or automatic jumping.</li></ul><br>It is important to note that some sites may prohibit the use of this script due to the modifications it makesto the game page. Code injection, altering the appearance, behavior, or interaction of the game with the page may beseen as disrupting the normal functioning of the site. This could violate the terms and conditions of third-partyplatforms.<br>We recommend checking the usage policies of the sites where you want to use DINOcheat, and ensuring thatthe script's usage complies with their rules. Using this script on sites that prohibit such modifications could lead toconsequences, including but not limited to suspension or banning from the site.<br>The user is responsible for usingthis script and must adhere to the rules of the sites on which it is employed.<br><br><h5><strong>13. Conclusion</strong></h5>By using the DINOcheat script, you fully accept this privacy policy and committo respecting the defined terms. We are committed to respecting your privacy by only collecting the necessaryinformation to personalize your experience, such as the language. However, it is essential that you use this scriptresponsibly and in compliance with the law. Misuse, fraudulent, or illegal use of DINOcheat may lead to consequences,and we disclaim any responsibility for unauthorized usage.<br>We encourage all users to respect the terms of use ofthird-party sites and ensure that their actions do not violate any rules, whether ethical or legal. The enjoyment ofcustomizing your gameplay experience should not come at the expense of others or the platforms you play on.<br>The present Terms of Use are drafted in the French language. In the event of any discrepancy in interpretationbetween the French version and any translation, the French version shall prevail.<br>We thankyou for your understanding and cooperation in ensuring the safe and respectful use of this script.<br><br><strong>LastUpdated</strong> : Friday, July 18, 2025<br><strong>Original Version</strong> : `,
+                },
+                'AgreeLabel': {
+                    'vn': "OK",
+                },
+            };
+
+            return translations[key][currentLang];
+        }
+
+
+        if (window.location.href.startsWith("https://chromedino.com/") ||
+            window.location.href.startsWith("https://tuckercraig.com/dino/")) {
+
+            var menuFooter = document.querySelector('footer.other-versions.__wrapper ul');
+
+            if (menuFooter) {
+                var newMenuItem = document.createElement('li');
+                var newLink = document.createElement('a');
+                newLink.href = "#";
+                newLink.innerHTML = `
+                <img src="https://raw.githubusercontent.com/quangthanh4800zzzz-ux/KH-NGLONGOP/refs/heads/main/SIX%20SEVEN%2067.jpg" width="40">
+                <span>${translate('menu')}</span>
+                `;
+
+                newMenuItem.appendChild(newLink);
+                menuFooter.appendChild(newMenuItem);
+
+                newLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toggleMenuPopup();
+                });
+            }
+
+        } else if (window.location.href.startsWith("https://dino-chrome.com/") ||
+                   window.location.href.startsWith("https://googledino.com/")) {
+
+            var mainMenu = document.querySelector('nav.main-menu');
+            if (mainMenu) {
+                var divider = document.createElement('span');
+                divider.className = 'divider';
+
+                var newLink1 = document.createElement('a');
+                newLink1.href = "#";
+                newLink1.textContent = translate('menu');
+                newLink1.style.cursor = 'pointer';
+
+                newLink1.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toggleMenuPopup();
+                });
+
+                mainMenu.appendChild(divider);
+                mainMenu.appendChild(newLink1);
+            }
+        } else if (window.location.href.startsWith("https://trex-runner.com/")) {
+
+            var existingMenuDiv = document.querySelector('.menu');
+
+            if (existingMenuDiv) {
+                var menuLink = document.createElement('a');
+                menuLink.href = "#";
+                menuLink.innerHTML = `
+                    <img src="https://raw.githubusercontent.com/quangthanh4800zzzz-ux/KH-NGLONGOP/refs/heads/main/SIX%20SEVEN%2067.jpg">
+                    <span>${translate('menu')}</span>
+                `;
+
+                menuLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toggleMenuPopup();
+                });
+
+                existingMenuDiv.appendChild(menuLink);
+            }
+        }
+
+
+
+        if (window.location.hostname === "dinorunner.com") {
+            const style = document.createElement('style');
+            style.innerHTML = `
+            .super-error-popup-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4);
+                z-index: 9998;
+                display: none;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .super-error-popup {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.7);
+                width: 80%;
+                max-width: 600px;
+                padding: 20px;
+                background: rgba(255, 255, 255, 0.9);
+                border: 1px solid black;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                z-index: 9999;
+                display: none;
+                opacity: 0;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .super-error-popup.open {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+
+            .super-error-popup .close-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                font-size: 24px;
+                font-weight: bold;
+                color: red;
+                transition: color 0.3s ease;
+            }
+
+            .super-error-popup .close-btn:hover {
+                color: #ff4c4c;
+            }
+
+            .super-error-popup .content {
+                padding-top: 20px;
+                font-size: 20px;
+            }
+
+            .super-error-popup .content a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+            .super-error-popup .content a:hover {
+                text-decoration: underline;
+            }
+
+            .flag-container {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+            }
+
+            .flag-container img {
+                width: 40px;
+                height: auto;
+                border-radius: 4px;
+                margin-right: 10px;
+                transition: transform 0.2s ease;
+                filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+            }
+
+            .flag-container img:hover {
+                transform: scale(1.1);
+            }
+
+            .flag-dropdown {
+                display: none;
+                position: absolute;
+                top: 35px;
+                right: 1px;
+                background: #fff;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+                padding: 8px;
+                z-index: 10000;
+
+                max-height: 140px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+            }
+
+            .flag-dropdown .flag {
+                display: block;
+                margin: 6px auto;
+                width: 36px;
+                height: auto;
+                border-radius: 4px;
+                transition: transform 0.2s ease;
+            }
+
+            .flag-dropdown .flag:hover {
+                transform: scale(1.1);
+            }
+
+            .flag-dropdown::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            .flag-dropdown::-webkit-scrollbar-track {
+                background: #f5f5f5;
+                border-radius: 3px;
+            }
+
+            .flag-dropdown::-webkit-scrollbar-thumb {
+                background-color: #ccc;
+                border-radius: 3px;
+                transition: background-color 0.2s ease;
+            }
+
+            .flag-dropdown::-webkit-scrollbar-thumb:hover {
+                background-color: #999;
+            }
+
+            `;
+
+            document.head.appendChild(style);
+
+            const overlay = document.createElement('div');
+            overlay.className = 'super-error-popup-overlay';
+            document.body.appendChild(overlay);
+
+            const popup = document.createElement('div');
+            popup.className = 'super-error-popup';
+            popup.innerHTML = `
+        <div class="flag-container">
+            <img src="" alt="flagselect" id="flag-select" class="flag" data-lang="">
+            <div class="flag-dropdown" id="flag-dropdown">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" id="flag-vn" class="flag" data-lang="vn">
+            </div>
+        </div>
+        <span class="close-btn">&times;</span>
+        <div class="content" id="content-message">
+            Hello, sorry but this script does not work on this site. I advise you to use this site <a href="https://chromedino.com/" target="_blank">https://chromedino.com/</a>
+        </div>
+    `;
+            document.body.appendChild(popup);
+
+            const flagContainer = document.querySelector('.flag-container');
+            const flagDropdown = document.getElementById('flag-dropdown');
+            const flags = document.querySelectorAll('#flag-dropdown .flag');
+            const currentLang = await GM_getValue('selectedLang', 'en');
+            const savedLang = await GM_getValue('selectedLang', 'en');
+
+            const LANG_TO_FLAG = {
+                vn: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg',
+
+            };
+
+            const savedFlag = LANG_TO_FLAG[savedLang] || LANG_TO_FLAG.en;
+            await GM_setValue('selectedFlag', savedFlag);
+
+            const flagSelect = document.getElementById('flag-select');
+            flagSelect.src = savedFlag;
+            flagSelect.dataset.lang = savedLang;
+            flagSelect.src = savedFlag;
+            flagSelect.dataset.lang = savedLang;
+            flagSelect.setAttribute('data-lang', savedLang);
+            const contentMessage = document.getElementById('content-message');
+            switch (savedLang) {
+                case 'fr':
+                    contentMessage.innerHTML = '(Dℝ∃wX) Désolé, ce script ne fonctionne pas sur ce site. Je vous conseille d\'utiliser ce site <a href="https://dino-chrome.com/" target="_blank">https://dino-chrome.com/</a>';
+                    break;
+                case 'es':
+                    contentMessage.innerHTML = '(Dℝ∃wX) Lo siento, este script no funciona en este sitio. Le recomiendo que utilice este sitio <a href="https://dino-chrome.com/" target="_blank">https://dino-chrome.com/</a>';
+                    break;
+                case 'it':
+                    contentMessage.innerHTML = '(Dℝ∃wX) Mi dispiace, questo script non funziona su questo sito. Ti consiglio di usare questo sito <a href="https://dino-chrome.com/" target="_blank">https://dino-chrome.com/</a>';
+                    break;
+                case 'de':
+                    contentMessage.innerHTML = '(Dℝ∃wX) Leider funktioniert dieses Skript auf dieser Website nicht. Ich empfehle Ihnen, diese Seite zu verwenden <a href="https://dino-chrome.com/" target="_blank">https://dino-chrome.com/</a>';
+                    break;
+                case 'zh-CN':
+                    contentMessage.innerHTML = '(Dℝ∃wX) 抱歉，此脚本在此网站上无法运行。建议您使用此网站 <a href="https://dino-chrome.com/" target="_blank">https://dino-chrome.com/</a>';
+                    break;
+                case 'ja':
+                    contentMessage.innerHTML = '(Dℝ∃wX) 申し訳ありませんが、このスクリプトはこのサイトでは動作しません。以下のサイトをご利用いただくことをおすすめします <a href="https://dino-chrome.com/" target="_blank">https://dino-chrome.com/</a>';
+                    break;
+                default:
+                    contentMessage.innerHTML = '(Dℝ∃wX) Hello, sorry but this script does not work on this site. I advise you to use this site <a href="https://dino-chrome.com/" target="_blank">https://dino-chrome.com/</a>';
+                    break;
+            }
+
+            flagContainer.addEventListener('click', (event) => {
+                event.stopPropagation();
+                flagDropdown.style.display = flagDropdown.style.display === 'block' ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', () => {
+                flagDropdown.style.display = 'none';
+            });
+
+            flags.forEach(flag => {
+                flag.addEventListener('click', async function() {
+                    const selectedLang = this.dataset.lang;
+                    const selectedFlag = this.src;
+
+                    flagSelect.src = selectedFlag;
+                    flagSelect.dataset.lang = selectedLang;
+
+                    await GM_setValue('selectedLang', selectedLang);
+                    await GM_setValue('selectedFlag', selectedFlag);
+
+                    switch (selectedLang) {
+                        default:
+                            contentMessage.innerHTML = 'Hello, sorry but this script does not work on this site. I advise you to use this site <a href="https://dino-chrome.com/" target="_blank">https://dino-chrome.com/</a>';
+                            break;
+                    }
+                });
+            });
+
+            setTimeout(() => {
+                overlay.style.display = 'block';
+                popup.classList.add('open');
+            }, 1000);
+
+
+
+            function openErrorPopup() {
+                overlay.style.display = 'block';
+                popup.style.display = 'block';
+                setTimeout(() => {
+                    overlay.style.opacity = '1';
+                    popup.classList.add('open');
+                }, 10);
+            }
+
+            function closeErrorPopup() {
+                popup.classList.remove('open');
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    popup.style.display = 'none';
+                }, 300);
+            }
+
+            popup.querySelector('.close-btn').addEventListener('click', closeErrorPopup);
+            openErrorPopup();
+
+            return;
+        }
+
+
+        function touche(key) {
+            const keyCodes = {
+                'ArrowUp': 38,
+                'ArrowDown': 40,
+                'ArrowLeft': 37,
+                'ArrowRight': 39,
+            };
+
+            const keyCode = keyCodes[key] || key.charCodeAt(0);
+
+            var event = new KeyboardEvent('keydown', {
+                key: key,
+                keyCode: keyCode,
+                which: keyCode,
+                bubbles: true
+            });
+
+            document.dispatchEvent(event);
+        }
+
+
+
+        function updateButtonText(newText) {
+            const airWalkButton = document.getElementById('toggleAirWalkButton');
+
+            airWalkButton.textContent = newText;
+        }
+
+
+
+        let isShortcutEnabled = false;
+
+        let menuPopup = null;
+        let windowElement = null;
+
+        function injectDistanceCode() {
+            const increment = 1000 / Runner.instance_.distanceMeter.config.COEFFICIENT;
+            Runner.instance_.distanceRan += increment;
+        }
+
+
+        const popupStyles = document.createElement('style');
+        popupStyles.innerHTML = `
+        .modern-menu-popup {
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            width: 300px;
+            height: auto;
+            max-height: 500px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .modern-menu-popup.open {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .modern-menu-popup .header {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .modern-menu-popup .content {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .modern-menu-popup .content span {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .modern-menu-popup .dropdown {
+            position: relative;
+            display: block;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .modern-menu-popup .dropdown-title {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modern-menu-popup .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            margin-top: 8px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            max-height: 250px;
+            overflow-y: auto;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .modern-menu-popup .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modern-menu-popup .dropdown-content::-webkit-scrollbar-thumb {
+            background-color: #bbb;
+            border-radius: 4px;
+        }
+
+        .modern-menu-popup .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background-color: #888;
+        }
+
+        .modern-menu-popup .theme-option {
+            padding: 8px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .modern-menu-popup .theme-option:hover {
+            background-color: #ddd;
+
+        }
+
+
+        .btn-small-discreet {
+            background-color: #f0f0f0;
+            color: #555;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .btn-small-discreet:hover {
+            background-color: #e0e0e0;
+        }
+
+        .input-small-discreet {
+            width: 80px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+
+        .menu-icon {
+            width: 25px;
+            height: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-icon .bar {
+            height: 3px;
+            width: 100%;
+            background-color: #555;
+            border-radius: 2px;
+        }
+
+        .side-panel {
+            width: 0;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #eaeaea;
+            border-radius: 10px;
+            overflow-x: hidden;
+            transition: width 0.4s ease, border-radius 0.4s ease, background-color 0.4s ease;
+            box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+        }
+
+        .side-panel.open {
+            width: 100%;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .side-panel-content {
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .side-panel.open .side-panel-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        .options-title {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .switch-container {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .switch-label {
+            margin-right: 8px;
+            color: #808080;
+        }
+
+        .discreet-switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .discreet-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .switch-icon {
+            width: 24px;
+            height: 24px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: #4CAF50;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(20px);
+        }
+
+        .slider.round {
+            border-radius: 30px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .credits {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .credits span .terms-of-use span {
+            display: block;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 1px;
+        }
+
+        .terms-of-use {
+            position: absolute;
+            top: 97%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease, color 0.3s ease;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .terms-of-use:hover {
+            color: blue;
+        }
+
+        .rating-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .rating-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .rating-label {
+            font-size: 14px;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .rating-stars {
+            text-decoration: none;
+            color: #f5c518;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .rating-stars span {
+            margin-right: 2px;
+        }
+
+        .star {
+            display: inline-block;
+            transition: transform 0.3s ease, color 0.3s ease;
+            animation: none;
+        }
+
+        .rating-stars:hover .star {
+            animation: starRise 0.6s ease forwards, starGlow 0.6s ease forwards;
+            transform-origin: center center;
+        }
+
+        @keyframes starRise {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(20deg) scale(1.2);
+            }
+
+            100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+        }
+
+        @keyframes starGlow {
+            0% {
+                color: #ffdd00;
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            }
+
+            50% {
+                color: #ffd700;
+                text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.5);
+            }
+
+            100% {
+                color: #ffdd00;
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        .rating-stars .star {
+            animation: starGlow 1.5s ease infinite;
+        }
+
+        .rating-stars:hover .star {
+            color: gold;
+        }
+
+        .icon-spacing {
+            margin-right: 8px;
+        }
+
+        `;
+        document.head.appendChild(popupStyles);
+
+
+        let isInvisibleActive = false;
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'n' && isShortcutEnabled) {
+                toggleInvisible();
+            }
+        });
+
+
+        let invisibleInterval;
+
+        function toggleInvisible() {
+            if (!isInvisibleActive) {
+                Runner.instance_.tRex.config.HEIGHT = -20;
+                document.getElementById('toggleCheckboxInvisible').checked = true;
+            } else {
+                Runner.instance_.tRex.config.HEIGHT = 47;
+                document.getElementById('toggleCheckboxInvisible').checked = false;
+            }
+
+            isInvisibleActive = !isInvisibleActive;
+        }
+
+        let isBotActive = false;
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'b' && isShortcutEnabled) {
+                toggleBot();
+            }
+        });
+
+
+        let botInterval;
+
+        function toggleBot() {
+            if (!isBotActive) {
+                function dispatchKey(type, key) {
+                    document.dispatchEvent(new KeyboardEvent(type, { keyCode: key }));
+                }
+
+                botInterval = setInterval(function () {
+                    const KEY_CODE_SPACE_BAR = 32;
+                    const KEY_CODE_ARROW_DOWN = 40;
+                    const CANVAS_HEIGHT = Runner.instance_.dimensions.HEIGHT;
+                    const DINO_HEIGHT = Runner.instance_.tRex.config.HEIGHT;
+
+                    const obstacle = Runner.instance_.horizon.obstacles[0];
+                    const speed = Runner.instance_.currentSpeed;
+
+                    if (obstacle) {
+                        const w = obstacle.width;
+                        const x = obstacle.xPos;
+                        const y = obstacle.yPos;
+                        const yFromBottom = CANVAS_HEIGHT - y - obstacle.typeConfig.height;
+                        const isObstacleNearby = x < 25 * speed - w / 2;
+
+                        if (isObstacleNearby) {
+                            if (yFromBottom > DINO_HEIGHT) {
+                            } else if (y > CANVAS_HEIGHT / 2) {
+                                dispatchKey("keyup", KEY_CODE_ARROW_DOWN);
+                                dispatchKey("keydown", KEY_CODE_SPACE_BAR);
+                            } else {
+                                dispatchKey("keydown", KEY_CODE_ARROW_DOWN);
+                            }
+                        }
+                    }
+                }, Runner.instance_.msPerFrame);
+
+                document.getElementById('toggleCheckboxBot').checked = true;
+            } else {
+                clearInterval(botInterval);
+                document.getElementById('toggleCheckboxBot').checked = false;
+            }
+
+            isBotActive = !isBotActive;
+        }
+
+
+        let isImmortal = false;
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'i' && isShortcutEnabled) {
+                toggleImmortality()
+
+            }
+        });
+
+
+        let originalGameOver = Runner.prototype.gameOver;
+
+        function toggleImmortality() {
+            if (!isImmortal) {
+                Runner.prototype.gameOver = function () {};
+                document.getElementById('toggleCheckboxImmortality').checked = true;
+            } else {
+
+                Runner.prototype.gameOver = originalGameOver;
+                document.getElementById('toggleCheckboxImmortality').checked = false;
+            }
+
+            isImmortal = !isImmortal;
+        }
+
+
+
+        function openInfoPanel() {
+            let infoPanel = document.getElementById('infoPanel');
+
+            if (!infoPanel) {
+                infoPanel = document.createElement('div');
+                infoPanel.id = 'infoPanel';
+                infoPanel.innerHTML = `
+               <span id="closeInfoPanel" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 24px;">&times;</span>
+               <h3>${translate('infoLabel')}</h3>
+               `;
+
+                document.body.appendChild(infoPanel);
+
+                infoPanel.style.position = 'fixed';
+                infoPanel.style.top = '0';
+                infoPanel.style.right = '-350px';
+                infoPanel.style.width = '300px';
+                infoPanel.style.height = '100%';
+                infoPanel.style.backgroundColor = '#ffffff';
+                infoPanel.style.borderLeft = '1px solid #ddd';
+                infoPanel.style.borderRadius = '8px';
+                infoPanel.style.boxShadow = '-2px 0 10px rgba(0, 0, 0, 0.2)';
+                infoPanel.style.padding = '20px';
+                infoPanel.style.zIndex = '2000';
+                infoPanel.style.transition = 'right 0.3s ease';
+                infoPanel.style.display = 'none';
+            }
+
+            if (infoPanel.style.display === 'none') {
+                infoPanel.style.display = 'block';
+                setTimeout(() => {
+                    infoPanel.style.right = '0';
+                }, 10);
+
+                document.getElementById('closeInfoPanel').addEventListener('click', closeInfoPanel);
+
+                if (!document.getElementById('suggestionsSection')) {
+                    addSuggestionsSection(infoPanel);
+                }
+
+                fetchInstallCount(infoPanel);
+            } else {
+                closeInfoPanel();
+            }
+        }
+
+
+        function addSuggestionsSection(infoPanel) {
+            const suggestionsSection = document.createElement('div');
+            suggestionsSection.id = 'suggestionsSection';
+            suggestionsSection.style.marginTop = '10px';
+
+            const contactText = document.createElement('p');
+            contactText.innerHTML = `
+            ${translate('infoContact')}
+            <a href="https://greasyfork.org/${translate('link')}/scripts/480000-dinocheat-hack-cheat-dino-google-tungtung-bot-rapide-score-imortel/feedback"
+                target="_blank" style="color: #007BFF; text-decoration: none;">
+                GreasyFork
+            </a> ${translate('OrLabel')}
+            <a href="https://github.com/quangthanh4800zzzz-ux" target="_blank" style="color: #007BFF; text-decoration: none;">
+                GitHub
+            </a>.
+            `;
+            contactText.style.fontSize = '18px';
+            contactText.style.marginTop = '10px';
+            contactText.style.textAlign = 'left';
+
+            const privateMessageText = document.createElement('p');
+            privateMessageText.innerHTML = `
+            ${translate('infoGmail')} :
+            <a href="mailto:quangthanh4800zzzz@gmail.com" style="color: #007BFF; text-decoration: none;">
+                quangthanh4800zzzz@gmail.com
+            </a>
+            `;
+            privateMessageText.style.fontSize = '18px';
+            privateMessageText.style.marginTop = '10px';
+            privateMessageText.style.textAlign = 'left';
+
+            const separator = document.createElement('hr');
+            separator.style.margin = '20px 0';
+            separator.style.border = 'none';
+            separator.style.borderTop = '1px solid #ddd';
+
+            suggestionsSection.appendChild(contactText);
+            suggestionsSection.appendChild(privateMessageText);
+
+            infoPanel.appendChild(suggestionsSection);
+            infoPanel.appendChild(separator);
+        }
+
+
+        const greasyForkUrl = 'https://greasyfork.org/fr/scripts/480000-dinocheat-hack-cheat-dino-google-tungtung-bot-rapide-score-imortel';
+
+        function fetchInstallCount(infoPanel) {
+            fetch(greasyForkUrl)
+                .then(response => response.text())
+                .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const installElement = doc.querySelector('dd.script-show-total-installs > span');
+                const installCount = installElement ? installElement.textContent.trim() : "Inconnu";
+                const versionElement = doc.querySelector('dd.script-show-version > span');
+                const scriptVersion = versionElement ? versionElement.textContent.trim() : "Inconnu";
+
+                displayInstallCountAndVersion(installCount, scriptVersion, infoPanel);
+            });
+        }
+
+        function displayInstallCountAndVersion(installCount, scriptVersion, infoPanel) {
+            const installCountElement = document.createElement('p');
+            installCountElement.style.fontSize = '20px';
+            installCountElement.style.fontWeight = 'normal';
+            installCountElement.style.textAlign = 'left';
+            installCountElement.style.marginTop = '10px';
+
+            const versionElement = document.createElement('p');
+            versionElement.textContent = `${translate('versionLabel')} : ${scriptVersion}`;
+            versionElement.style.fontSize = '20px';
+            versionElement.style.fontWeight = 'normal';
+            versionElement.style.textAlign = 'left';
+            versionElement.style.marginTop = '10px';
+
+            infoPanel.appendChild(installCountElement);
+            infoPanel.appendChild(versionElement);
+
+            let currentCount = 0;
+            const targetCount = parseInt(installCount.replace(/\s/g, ''));
+            const increment = Math.ceil(targetCount / 100);
+            const counterInterval = setInterval(() => {
+                currentCount += increment;
+                if (currentCount >= targetCount) {
+                    currentCount = targetCount;
+                    clearInterval(counterInterval);
+                }
+                installCountElement.textContent = `${translate('installLabel')} : ${currentCount.toLocaleString()}`;
+            }, 20);
+        }
+
+
+        function closeInfoPanel() {
+            const infoPanel = document.getElementById('infoPanel');
+
+            infoPanel.style.right = '-350px';
+            setTimeout(() => {
+                infoPanel.remove();
+            }, 300);
+        }
+
+        function closeInfoPanelFast() {
+            const infoPanel = document.getElementById('infoPanel');
+            infoPanel.remove();
+        }
+
+
+        function openTermsPanel() {
+            toggleMenuPopup()
+            if (typeof infoPanel !== 'undefined' && infoPanel !== null) {
+                closeInfoPanelFast();
+            }
+
+            if (typeof shortcutsPanel !== 'undefined' && shortcutsPanel !== null) {
+                closeInfoPanelFast();
+            }
+
+
+            const TermsPanel = document.createElement('div');
+            TermsPanel.id = 'terms-panel';
+            TermsPanel.style.position = 'fixed';
+            TermsPanel.style.top = '0';
+            TermsPanel.style.left = '0';
+            TermsPanel.style.width = '100%';
+            TermsPanel.style.height = '100%';
+            TermsPanel.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            TermsPanel.style.display = 'flex';
+            TermsPanel.style.justifyContent = 'center';
+            TermsPanel.style.overflow = 'auto';
+            TermsPanel.style.overflowY = 'scroll';
+            TermsPanel.style.alignItems = 'flex-start';
+            TermsPanel.style.zIndex = '1000';
+
+            const content = document.createElement('div');
+            content.style.backgroundColor = 'white';
+            content.style.padding = '20px';
+            content.style.borderRadius = '10px';
+            content.style.textAlign = 'left';
+            content.style.maxWidth = '600px';
+            content.style.width = '90%';
+            content.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+
+            const title = document.createElement('h2');
+            title.style.textAlign = 'center';
+            title.innerHTML = translate('TileTermsLabel');
+            content.appendChild(title);
+
+
+
+            const text = document.createElement('p');
+            text.innerHTML = `${translate('TermsLabel')} `;
+            content.appendChild(text);
+
+            const clickableText = document.createElement('span');
+            clickableText.id = 'boutonVF';
+            clickableText.textContent = 'French';
+            clickableText.style.color = 'blue';
+            clickableText.style.cursor = 'pointer';
+            text.appendChild(clickableText);
+
+
+            function getLanguageValue() {
+                let languageValue;
+                if (currentLang === 'vn'){
+                    languageValue = 'vn'}
+                if (currentLang === 'none'){
+                    languageValue = 'vn'
+                }
+                return languageValue;
+            }
+            let languageValue = getLanguageValue();
+
+            clickableText.addEventListener('click', async function () {
+                currentLang = currentLang === 'fr' ? 'en' : 'fr';
+                await GM_setValue('selectedLang', currentLang);
+                title.innerHTML = translate('TileTermsLabel');
+                content.appendChild(title);
+                text.innerHTML = `${translate('TermsLabel')}`;
+                content.appendChild(text);
+                text.appendChild(clickableText);
+                content.appendChild(closeButton);
+                if (currentLang === 'fr') {
+                    clickableText.remove();
+                }
+                TermsPanel.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+
+
+            if (window.location.href.includes('chromedino.com') || window.location.href.includes('tuckercraig.com/dino')) {
+                title.style.fontSize = '2rem';
+                title.style.fontWeight = 'bold';
+
+
+                const h5Elements = text.querySelectorAll('h5');
+                h5Elements.forEach(h5 => {
+                    h5.style.fontSize = '1.2rem';
+                    h5.style.fontWeight = 'bold';
+                });
+
+
+                const links = text.querySelectorAll('a');
+                links.forEach(link => {
+                    link.style.textDecoration = 'none';
+                    link.onmouseover = () => link.style.textDecoration = 'underline';
+                    link.onmouseout = () => link.style.textDecoration = 'none';
+                    link.style.color = '#007bff';
+                });
+            }
+
+
+            const closeButton = document.createElement('button');
+            closeButton.innerText = `${translate('AgreeLabel')} `;
+            closeButton.style.marginTop = '40px';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.fontSize = '16px';
+            closeButton.style.backgroundColor = '#007BFF';
+            closeButton.style.color = 'white';
+            closeButton.style.border = 'none';
+            closeButton.style.borderRadius = '5px';
+            closeButton.style.cursor = 'pointer';
+            closeButton.style.transition = 'background-color 0.3s, transform 0.2s';
+
+            closeButton.onmouseover = function () {
+                closeButton.style.backgroundColor = '#0056b3';
+                closeButton.style.transform = 'scale(1.05)';
+            };
+
+            closeButton.onmouseout = function () {
+                closeButton.style.backgroundColor = '#007BFF';
+                closeButton.style.transform = 'scale(1)';
+            };
+
+
+            closeButton.onclick = async function () {
+                if (languageValue === 'vn') {
+                    currentLang = 'vn'
+                    await GM_setValue('selectedLang', currentLang);
+                } else if (languageValue === 'vn') {
+                    currentLang = 'vn'
+                }
+
+                toggleMenuPopup();
+                TermsPanel.remove()
+                document.body.style.overflow = 'auto';
+            };
+            if (currentLang === 'fr') {
+                clickableText.remove();
+            }
+            content.appendChild(closeButton);
+
+            TermsPanel.appendChild(content);
+            document.body.style.overflow = 'hidden';
+            document.body.appendChild(TermsPanel);
+        }
+
+
+        function openShortcutsPanel() {
+            let shortcutsPanel = document.getElementById('shortcutsPanel');
+
+            if (!shortcutsPanel) {
+                shortcutsPanel = document.createElement('div');
+                shortcutsPanel.id = 'shortcutsPanel';
+                shortcutsPanel.innerHTML = `
+                <span id="closeShortcutsPanel"
+                    style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 24px;">&times;</span>
+                <h3>${translate('shortcutsTitle')}</h3>
+                <ul id="shortcutsList">
+                    <li data-description="${translate('jumpDescription')}">${translate('jumpText')}: <strong>"h"</strong></li>
+                    <li data-description="${translate('speedDescription')}">${translate('speedText')}: <strong>"v"</strong></li>
+                    <li data-description="${translate('immortalityDescription')}">${translate('immortalityText')}: <strong>"i"</strong>
+                    </li>
+                    <li data-description="${translate('flyDescription')}">${translate('flyText')}: <strong>"a"</strong></li>
+                    <li data-description="${translate('scoreDescription')}">${translate('scoreText')}: <strong>"k"</strong></li>
+                    <li data-description="${translate('autoJumpDescription')}">${translate('autoJumpText')}: <strong>"b"</strong></li>
+                    <li data-description="${translate('addScoreDescription')}">${translate('addScoreText')}: <strong>"s"</strong></li>
+                    <li data-description="${translate('breakDescription')}">${translate('breakText')}: <strong>"p"</strong></li>
+                    <li data-description="${translate('menuDescription')}">${translate('menuText')}: <strong>"t"</strong></li>
+                </ul>
+                <div id="descriptionPanel" style="margin-top: 10px; color: #666; display: none;"></div>
+            `;
+
+                document.body.appendChild(shortcutsPanel);
+
+                shortcutsPanel.style.position = 'fixed';
+                shortcutsPanel.style.top = '0';
+                shortcutsPanel.style.right = '-350px';
+                shortcutsPanel.style.width = '300px';
+                shortcutsPanel.style.height = '100%';
+                shortcutsPanel.style.backgroundColor = '#ffffff';
+                shortcutsPanel.style.borderLeft = '1px solid #ddd';
+                shortcutsPanel.style.borderRadius = '8px';
+                shortcutsPanel.style.boxShadow = '-2px 0 10px rgba(0, 0, 0, 0.2)';
+                shortcutsPanel.style.padding = '20px';
+                shortcutsPanel.style.zIndex = '2000';
+                shortcutsPanel.style.transition = 'right 0.3s ease';
+                shortcutsPanel.style.display = 'none';
+            }
+
+            if (shortcutsPanel.style.display === 'none') {
+                shortcutsPanel.style.display = 'block';
+                setTimeout(() => {
+                    shortcutsPanel.style.right = '0';
+                }, 10);
+
+                document.getElementById('closeShortcutsPanel').addEventListener('click', closeShortcutsPanel);
+            } else {
+                closeShortcutsPanel();
+            }
+
+            const listItems = document.querySelectorAll('#shortcutsList li');
+            const descriptionPanel = document.getElementById('descriptionPanel');
+
+            listItems.forEach(item => {
+                item.addEventListener('mouseover', function() {
+                    const description = this.getAttribute('data-description');
+                    descriptionPanel.innerText = description;
+                    descriptionPanel.style.display = 'block';
+                });
+
+                item.addEventListener('mouseout', function() {
+                    descriptionPanel.style.display = 'none';
+                });
+            });
+        }
+
+        function closeShortcutsPanel() {
+            const shortcutsPanel = document.getElementById('shortcutsPanel');
+
+            shortcutsPanel.style.right = '-350px';
+            setTimeout(() => {
+                shortcutsPanel.remove();
+            }, 300);
+        }
+
+        function closeShortcutsPanelFast() {
+            const shortcutsPanel = document.getElementById('shortcutsPanel');
+            shortcutsPanel.remove();
+
+        }
+
+
+        function toggleMenuPopup() {
+            if (!menuPopup) {
+                menuPopup = document.createElement('div');
+                menuPopup.className = 'modern-menu-popup';
+                menuPopup.innerHTML = `
+                <head>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                </head>
+                <div class="header">
+                    <div class="menu-icon" id="menuIcon">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>${translate('menu')}
+                </div>
+                <div class="content">
+                    <span>${translate('jumpHeight')} <input type="number" id="jumpHeightInput" class="input-small-discreet"
+                            placeholder="10"></span>
+                    <span>${translate('speedText')} <input type="number" id="speedInput" class="input-small-discreet"
+                            placeholder="7"></span>
+                    <span>${translate('scoreText')} <input type="number" id="scoreInput" class="input-small-discreet"
+                            placeholder="00000"></span>
+                    <span>${translate('immortalityText')} <label> <input type="checkbox" id="toggleCheckboxImmortality"></label></span>
+                    <span>${translate('autoJumpText')} <label> <input type="checkbox" id="toggleCheckboxBot"></label></span>
+                    <span>${translate('invisibleText')} <label> <input type="checkbox" id="toggleCheckboxInvisible"></label></span>
+                    <span>${translate('scorePlus')} <button id="increaseScoreButton" class="btn-small-discreet"> 1000 </button></span>
+                    <span>${translate('walkIn')} <button id="toggleAirWalkButton"
+                            class="btn-small-discreet">${translate('theAir')}</button></span>
+                    <div class="dropdown">
+                        <span class="dropdown-title">${translate('dinoTheme')}</span>
+                        <div class="dropdown-content">
+                            <span class="theme-option" data-theme="color">${translate('color')}</span>
+                            <span class="theme-option" data-theme="mario">${translate('mario')}</span>
+                            <span class="theme-option" data-theme="trump">${translate('trump')}</span>
+                            <span class="theme-option" data-theme="joker">${translate('joker')}</span>
+                            <span class="theme-option" data-theme="batman">${translate('batman')}</span>
+                            <span class="theme-option" data-theme="night">${translate('night')}</span>
+                            <span class="theme-option" data-theme="squid_game">${translate('squid_game')}</span>
+                            <span class="theme-option" data-theme="santa">${translate('santa')}</span>
+                            <span class="theme-option" data-theme="halloween">${translate('halloween')}</span>
+                            <span class="theme-option" data-theme="wednesday">${translate('wednesday')}</span>
+                            <span class="theme-option" data-theme="naruto">${translate('naruto')}</span>
+                            <span class="theme-option" data-theme="naruto2">${translate('naruto2')}</span>
+                            <span class="theme-option" data-theme="godzilla">${translate('godzilla')}</span>
+                            <span class="theme-option" data-theme="cat">${translate('cat')}</span>
+                            <span class="theme-option" data-theme="ninja">${translate('ninja')}</span>
+                            <span class="theme-option" data-theme="classic">${translate('classic')}</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="terms-of-use">
+                    <span id="TermsText">${translate('TileTermsLabel')}</span>
+                </div>
+
+                <div id="sidePanel" class="side-panel">
+                    <div class="side-panel-content">
+                        <h2 class="options-title">${translate('optionsTitle')}</h2>
+
+                        <div class="switch-container">
+                            <span class="switch-label">${translate('shortcutsLabel')}</span>
+                            <svg id="eyeIcon" class="switch-icon icon-spacing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M1.73 12c1.36-2.15 4.3-7 10.27-7s8.91 4.85 10.27 7c-1.36 2.15-4.3 7-10.27 7S3.09 14.15 1.73 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
+                                </path>
+                            </svg>
+                            <label class="discreet-switch">
+                                <input type="checkbox" id="toggleShortcut">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <div class="switch-container">
+                            <span class="switch-label">${translate('breakText')}</span>
+                            <svg id="breakIcon" class="switch-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="6" y="4" width="4" height="16"></rect>
+                                <rect x="14" y="4" width="4" height="16"></rect>
+                            </svg>
+                        </div>
+
+                        <div class="switch-container">
+                            <span class="switch-label">${translate('infoLabel')}</span>
+                            <svg id="infoIcon" class="switch-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                        </div>
+                        <div class="rating-container">
+                            <span class="rating-label">${translate('ratingLabel')}</span>
+                            <a href="https://greasyfork.org/${translate('link')}/scripts/486972-dinocheat-hack-cheat-dino-google-chrome-bot-rapide-score-imortel/feedback?locale_override=1"
+                                target="_blank" class="rating-stars">
+                                <span class="star">⭐️</span>
+                                <span class="star">⭐️</span>
+                                <span class="star">⭐️</span>
+                                <span class="star">⭐️</span>
+                                <span class="star">⭐️</span>
+                            </a>
+                        </div>
+
+                        <div class="choice-contain">
+                            <span class="rating-label">${translate('switchLabelLang')}</span>
+                            <div id="flag-selector" class="flag-conteneur">
+                                <img id="selected-flag"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/0/08/Flag_of_the_People%27s_Army_of_Vietnam.svg"
+                                    alt="Selected Flag" class="flag-selected" data-lang="en" />
+                                <div id="flag-list" class="flag-list">
+                                    <img class="flag-option"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Flag_of_the_People%27s_Army_of_Vietnam.svg"
+                                        alt="VietNam" data-lang="vn" />
+                                </div>
+                            </div>
+                        </div>
+                        <style>
+                            .choice-contain {
+                                z-index: 9999;
+                                display: flex;
+                                align-items: center;
+                                font-family: Arial, sans-serif;
+                                margin-top: 20px;
+                            }
+
+                            .flag-conteneur {
+                                position: relative;
+                                margin-left: 10px;
+                            }
+
+                            .flag-selected {
+                                width: 35px;
+                                height: 25px;
+                                cursor: pointer;
+                                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                                border-radius: 5px;
+                                border: 1px solid #ddd;
+                            }
+
+                            .flag-selected:hover {
+                                transform: scale(1.1);
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            }
+
+                            .flag-list {
+                                position: absolute;
+                                width: 100%;
+                                top: 0;
+                                left: 50px;
+                                max-height: 100px;
+                                overflow-y: auto;
+                                overflow-x: hidden;
+                                background-color: white;
+                                border: 1px solid #ccc;
+                                border-radius: 5px;
+                                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                                padding: 10px;
+                                z-index: 9999;
+                                display: none;
+                            }
+
+                            .flag-list.show {
+                                display: block;
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+
+                            .flag-list::-webkit-scrollbar {
+                                width: 8px;
+                            }
+
+                            .flag-list::-webkit-scrollbar-thumb {
+                                background-color: #888;
+                                border-radius: 5px;
+                            }
+
+                            .flag-list::-webkit-scrollbar-thumb:hover {
+                                background-color: #555;
+                            }
+
+                            .flag-option {
+                                width: 35px;
+                                height: 25px;
+                                cursor: pointer;
+                                margin: 5px 0;
+                                transition: transform 0.3s ease, background-color 0.3s ease;
+                                border-radius: 5px;
+                                border: 1px solid transparent;
+                            }
+
+                            .flag-option:hover {
+                                transform: scale(1.05);
+                                background-color: #f9f9f9;
+                                border: 1px solid #ddd;
+                            }
+                        </style>
+
+
+                    </div>
+
+                    <div class="credits">
+                        <span>${translate('creditLabel')}</span>
+                    </div>
+                </div>
+                `;
+
+                document.body.appendChild(menuPopup);
+                setTimeout(() => {
+                    menuPopup.classList.add('open');
+                }, 10);
+
+
+                const checkbox = document.getElementById('toggleCheckbox');
+                const statusText = document.getElementById('status');
+                const selectedFlag = document.getElementById('selected-flag');
+                const flagList = document.getElementById('flag-list');
+                const flagOptions = document.querySelectorAll('.flag-option');
+
+
+                async function changeLanguage(flag) {
+                    const newLang = flag.getAttribute('data-lang');
+                    const newSrc = flag.src;
+
+                    selectedFlag.src = newSrc;
+                    selectedFlag.setAttribute('data-lang', newLang);
+
+                    await GM_setValue('selectedLang', newLang);
+
+
+                    currentLang = newLang;
+
+                    flagList.classList.remove('show');
+                }
+
+
+                async function loadLanguage() {
+                    const savedLang = await GM_getValue('selectedLang');
+                    if (savedLang) {
+                        const flag = document.querySelector(`.flag-option[data-lang="${savedLang}"]`);
+                        if (flag) {
+                            selectedFlag.src = flag.src;
+                            selectedFlag.setAttribute('data-lang', savedLang);
+                            currentLang = savedLang;
+                        }
+                    } else {
+                        selectedFlag.src = 'https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg';
+                        selectedFlag.setAttribute('data-lang', 'en');
+                        currentLang = 'en';
+                    }
+                }
+
+                selectedFlag.addEventListener('click', function () {
+                    if (flagList.classList.contains('show')) {
+                        flagList.classList.remove('show');
+                    } else {
+                        flagList.classList.add('show');
+                        loadLanguage();
+                    }
+                });
+
+                flagOptions.forEach(function (flag) {
+                    flag.addEventListener('click', function () {
+                        changeLanguage(flag);
+                        closeMenuPopupFast();
+                        setTimeout(() => {
+                            toggleMenuPopup();
+                        }, 20);
+
+                        const shortcutsPanel = document.getElementById('shortcutsPanel');
+                        if (shortcutsPanel) {
+                            closeShortcutsPanelFast();
+                            setTimeout(() => {
+                                openShortcutsPanel();
+                            }, 2);
+                        }
+
+                        const infoPanel = document.getElementById('infoPanel');
+                        if (infoPanel) {
+                            closeInfoPanelFast();
+                            setTimeout(() => {
+                                openInfoPanel();
+                            }, 2);
+                        }
+
+                    });
+                });
+
+
+                function closeMenuPopupFast() {
+                    if (menuPopup) {
+                        menuPopup.style.display = 'none';
+                        setTimeout(() => {
+                            if (document.body.contains(menuPopup)) {
+                                document.body.removeChild(menuPopup);
+                                menuPopup = null;
+                            }
+                        }, 1);
+                    }
+                }
+
+
+                document.addEventListener('click', function (e) {
+                    const flagSelector = document.getElementById('flag-selector');
+                    if (flagSelector && !flagSelector.contains(e.target)) {
+                        flagList.classList.remove('show');
+                    }
+                });
+
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    loadLanguage();
+                });
+                loadLanguage();
+
+
+
+                (async function initShortcutState() {
+                    const saved = await GM_getValue('shortcutEnabled', false);
+                    isShortcutEnabled = saved;
+                    const shortcutCheckbox = document.getElementById('toggleShortcut');
+                    if (shortcutCheckbox) shortcutCheckbox.checked = saved;
+                })();
+
+                document.getElementById('toggleShortcut').addEventListener('change', async function() {
+                    isShortcutEnabled = this.checked;
+                    await GM_setValue('shortcutEnabled', isShortcutEnabled);
+                });
+
+
+                function detectEyeClick() {
+                    const eyeIcon = document.getElementById('eyeIcon');
+                    if (eyeIcon) {
+                        eyeIcon.addEventListener('click', function() {
+                            const infoPanel = document.getElementById('infoPanel');
+                            if (infoPanel) {
+                                closeInfoPanelFast();
+                                setTimeout(() => {
+                                    openShortcutsPanel();
+                                }, 2);
+                            } else {
+                                openShortcutsPanel();
+                            }
+                        });
+                    }
+                }
+                detectEyeClick();
+
+
+                const breakIcon = document.getElementById('breakIcon');
+                if (breakIcon) {
+
+                    function updatePauseIcon() {
+                        breakIcon.innerHTML = '';
+                        if (Runner.instance_.isRunning()) {
+                            breakIcon.innerHTML =
+                                '<rect x="6" y="4" width="4" height="16"></rect>' +
+                                '<rect x="14" y="4" width="4" height="16"></rect>';
+                        } else {
+                            breakIcon.innerHTML = '<polygon points="6,4 18,12 6,20"></polygon>';
+                        }
+                    }
+
+                    function togglePause() {
+                        if (Runner.instance_.isRunning()) {
+                            Runner.instance_.stop();
+                        } else {
+                            Runner.instance_.play();
+                        }
+                        updatePauseIcon();
+                    }
+
+                    window.togglePause = togglePause;
+                    function onBreakIconClick() {
+                        togglePause();
+                    }
+
+                    function onKeydown(event) {
+                        if (!isShortcutEnabled) return;
+                        if (event.key === 'p') {
+                            togglePause();
+                            event.preventDefault();
+                        }
+                    }
+
+                    breakIcon.addEventListener('click', onBreakIconClick);
+                    document.addEventListener('keydown', onKeydown);
+
+
+                    setInterval(updatePauseIcon, 150);
+                    updatePauseIcon();
+                }
+
+
+                function detectInfoClick() {
+                    const infoIcon = document.getElementById('infoIcon');
+                    if (infoIcon) {
+                        infoIcon.addEventListener('click', function() {
+                            const shortcutsPanel = document.getElementById('shortcutsPanel');
+                            if (shortcutsPanel) {
+                                closeShortcutsPanelFast();
+                                setTimeout(() => {
+                                    openInfoPanel();
+                                }, 2);
+                            } else {
+                                openInfoPanel();
+                            }
+                        });
+                    }
+                }
+
+                detectInfoClick();
+
+
+                function detectTermsClick() {
+                    const TermsText = document.getElementById('TermsText');
+                    if (TermsText) {
+                        TermsText.addEventListener('click', function() {
+                            const shortcutsPanel = document.getElementById('shortcutsPanel');
+                            if (shortcutsPanel) {
+                                closeShortcutsPanelFast();
+                                setTimeout(() => {
+                                    openTermsPanel();
+                                }, 2);
+                            } else {
+                                openTermsPanel();
+                            }
+                        });
+                    }
+                }
+
+                detectTermsClick();
+
+
+                const popup = document.querySelector('.modern-menu-popup');
+
+                popup.style.position = 'absolute';
+
+                let documentWidth = document.documentElement.scrollWidth;
+                let documentHeight = document.documentElement.scrollHeight;
+
+                function updateDocumentDimensions() {
+                    documentWidth = document.documentElement.scrollWidth;
+                    documentHeight = document.documentElement.scrollHeight;
+                }
+
+                updateDocumentDimensions();
+
+                window.addEventListener('resize', updateDocumentDimensions);
+
+                popup.addEventListener('mousedown', function (e) {
+                    let shiftX = e.clientX - popup.getBoundingClientRect().left;
+                    let shiftY = e.clientY - popup.getBoundingClientRect().top;
+
+                    function moveAt(pageX, pageY) {
+                        let newLeft = pageX - shiftX;
+                        let newTop = pageY - shiftY;
+
+                        newLeft = Math.max(0, Math.min(documentWidth - popup.offsetWidth, newLeft));
+                        newTop = Math.max(0, Math.min(documentHeight - popup.offsetHeight, newTop));
+
+                        popup.style.left = `${newLeft}px`;
+                        popup.style.top = `${newTop}px`;
+                    }
+
+                    function onMouseMove(event) {
+                        moveAt(event.pageX, event.pageY);
+                    }
+
+                    document.addEventListener('mousemove', onMouseMove);
+
+                    document.addEventListener('mouseup', function () {
+                        document.removeEventListener('mousemove', onMouseMove);
+                    }, { once: true });
+                });
+
+                popup.ondragstart = function () {
+                    return false;
+                };
+
+
+                document.getElementById('toggleCheckboxBot').addEventListener('change', function() {
+                    if (this.checked) {
+                        toggleBot()
+                    } else {
+                        toggleBot()
+                    }
+                });
+
+                document.getElementById('toggleCheckboxInvisible').addEventListener('change', function() {
+                    if (this.checked) {
+                        toggleInvisible()
+                    } else {
+                        toggleInvisible()
+                    }
+                });
+
+                document.getElementById('toggleCheckboxImmortality').addEventListener('change', function() {
+                    if (this.checked) {
+                        toggleImmortality()
+                    } else {
+                        toggleImmortality()
+                    }
+                });
+
+                document.getElementById('menuIcon').addEventListener('click', function() {
+                    const sidePanel = document.getElementById('sidePanel');
+                    sidePanel.classList.toggle('open');
+                    const dropdownContent = document.querySelector('.dropdown-content');
+                    dropdownContent.style.display = 'none';
+                });
+
+
+
+                document.querySelector('.dropdown-title').addEventListener('click', function() {
+                    const dropdownContent = document.querySelector('.dropdown-content');
+                    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+                });
+
+                document.querySelectorAll('.theme-option').forEach(el => {
+                    el.addEventListener('click', () => {
+                        const theme = el.getAttribute('data-theme');
+                        applyTheme(theme);
+                    });
+                });
+
+
+
+                let isDragging = false;
+                let offsetX, offsetY;
+
+                const header = menuPopup.querySelector('.header');
+
+                function updateJumpHeight(value) {
+                    const jumpHeight = parseFloat(value);
+                    if (!isNaN(jumpHeight)) {
+                        Runner.instance_.tRex.setJumpVelocity(jumpHeight);
+                    } else {
+                        alert(translate('invalidJumpHeight'));
+                    }
+                }
+
+                const jumpHeightInput = document.getElementById('jumpHeightInput');
+
+                jumpHeightInput.addEventListener('keydown', function(event) {
+                    if (event.key === 'Enter') {
+                        updateJumpHeight(this.value);
+                    }
+                });
+
+                jumpHeightInput.addEventListener('change', function() {
+                    updateJumpHeight(this.value);
+                });
+
+
+
+                function updateSpeed(value) {
+                    const speed = parseFloat(value);
+                    if (!isNaN(speed)) {
+                        Runner.instance_.setSpeed(speed);
+                    } else {
+                        alert(translate('invalidSpeed'));
+                    }
+                }
+
+                const speedInput = document.getElementById('speedInput');
+
+                speedInput.addEventListener('keydown', function(event) {
+                    if (event.key === 'Enter') {
+                        updateSpeed(this.value);
+                    }
+                });
+
+                speedInput.addEventListener('change', function() {
+                    updateSpeed(this.value);
+                });
+
+
+
+                function updateScore(value) {
+                    const newScore = parseInt(value, 10);
+                    if (!isNaN(newScore) && Number.isInteger(newScore) && newScore <= 999990) {
+                        Runner.instance_.distanceRan = newScore / Runner.instance_.distanceMeter.config.COEFFICIENT;
+                    } else {
+                        alert(translate('invalidIntegerScore'));
+                    }
+                }
+
+                const scoreInput = document.getElementById('scoreInput');
+
+                scoreInput.addEventListener('keydown', function(event) {
+                    if (event.key === 'Enter') {
+                        updateScore(this.value);
+                    }
+                });
+
+                scoreInput.addEventListener('change', function() {
+                    updateScore(this.value);
+                });
+
+
+
+                function increaseScore() {
+                    const scoreIncrement = 1000;
+                    if (Runner.instance_) {
+                        Runner.instance_.distanceRan += scoreIncrement / Runner.instance_.distanceMeter.config.COEFFICIENT;
+                    } else {
+                        alert(translate('runnerInstanceNotAvailable'));
+                    }
+                }
+
+                document.getElementById('increaseScoreButton').addEventListener('click', increaseScore);
+
+
+                let isWalkingInTheAir = false;
+
+                document.getElementById('toggleAirWalkButton').addEventListener('click', function() {
+                    if (isWalkingInTheAir) {
+                        Runner.instance_.tRex.groundYPos = 93;
+                        updateButtonText(translate('theAir'));
+                        touche('ArrowUp');
+
+                    } else {
+                        Runner.instance_.tRex.groundYPos = 0;
+                        updateButtonText(translate('theGround'));
+                        touche('ArrowUp');
+
+                    }
+
+                    isWalkingInTheAir = !isWalkingInTheAir;
+                });
+
+                if (window.location.href.startsWith("https://dino-chrome.com/") ||
+                    window.location.href.startsWith("https://googledino.com/")) {
+                    for (let i = 0; i < document.styleSheets.length; i++) {
+                        let styleSheet = document.styleSheets[i];
+
+                        try {
+                            for (let j = 0; j < styleSheet.cssRules.length; j++) {
+                                let rule = styleSheet.cssRules[j];
+
+                                if (rule.selectorText && rule.selectorText.includes('*')) {
+                                    styleSheet.deleteRule(j);
+                                    break;
+                                }
+                            }
+                        } catch (e) {
+                        }
+                    }
+
+                    let elements = document.querySelectorAll('.rating-stars');
+
+                    elements.forEach(element => {
+                        element.style.textDecoration = 'none';
+                    });
+                }
+
+
+
+                header.addEventListener('mousedown', function(event) {
+                    isDragging = true;
+                    offsetX = event.clientX - menuPopup.offsetLeft;
+                    offsetY = event.clientY - menuPopup.offsetTop;
+                    header.style.cursor = 'grabbing';
+                });
+
+                document.addEventListener('mousemove', function(event) {
+                    if (isDragging) {
+                        menuPopup.style.left = event.clientX - offsetX + 'px';
+                        menuPopup.style.top = event.clientY - offsetY + 'px';
+                    }
+                });
+
+                document.addEventListener('mouseup', function() {
+                    if (isDragging) {
+                        isDragging = false;
+                        header.style.cursor = 'move';
+                    }
+                });
+
+            } else {
+                menuPopup.classList.remove('open');
+                setTimeout(() => {
+                    if (menuPopup && document.body.contains(menuPopup)) {
+                        document.body.removeChild(menuPopup);
+                        menuPopup = null;
+                    }
+                }, 300);
+            }
+        }
+
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'h' && isShortcutEnabled) {
+                const userInput = prompt(translate('enterNewJumpHeight'));
+                const jumpHeight = parseFloat(userInput);
+                if (!isNaN(jumpHeight)) {
+                    Runner.instance_.tRex.setJumpVelocity(jumpHeight);
+                    document.getElementById('jumpHeightInput').value = jumpHeight;
+                } else {
+                    alert(translate('invalidJumpHeight'));
+                }
+            }
+        });
+
+        const THEMES = {
+            color: {
+                imgs: [
+                    'https://chromedino.com/assets/chromedino_coloured-1x.png',
+                    'https://chromedino.com/assets/chromedino_coloured-2x.png'
+                ],
+                bg: '#f7f7f7'
+            },
+            classic: {
+                imgs: [
+                    'https://dino-chrome.com/static/images/1.png',
+                    'https://dino-chrome.com/static/images/2.png'
+                ],
+                bg: '#f7f7f7'
+            },
+            mario: {
+                imgs: [
+                    'https://chromedino.com/assets/offline-sprite-1x-mario.png',
+                    'https://chromedino.com/assets/offline-sprite-2x-mario.png'
+                ],
+                bg: '#75a6fa'
+            },
+            trump: {
+                imgs: [
+                    'https://dino-chrome.com/trumpino-game/trump1x.png',
+                    'https://dino-chrome.com/trumpino-game/trump2x.png'
+                ],
+                bg: '#f7f7f7'
+            },
+            joker: {
+                imgs: [
+                    'https://chromedino.com/assets/joker1x.png',
+                    'https://chromedino.com/assets/joker2x.png'
+                ],
+                bg: '#f7f7f7'
+            },
+            batman: {
+                imgs: [
+                    'https://chromedino.com/assets/batman1x.png',
+                    'https://chromedino.com/assets/batman2x.png'
+                ],
+                bg: '#000'
+            },
+            night: {
+                imgs: [
+                    'https://chromedino.com/assets/offline-sprite-1x-black.png',
+                    'https://chromedino.com/assets/offline-sprite-2x-black.png'
+                ],
+                bg: '#000'
+            },
+            squid_game: {
+                imgs: [
+                    'https://dinorunner.com/static/images/squid-game/squid_game1x.png',
+                    'https://dinorunner.com/static/images/squid-game/squid_game2x.png'
+                ],
+                bg: '#f7f7f7'
+            },
+            santa: {
+                imgs: [
+                    'https://dinorunner.com/static/images/santa/offline-sprite-1x-santa.png',
+                    'https://dinorunner.com/static/images/santa/offline-sprite-2x-santa.png'
+                ],
+                bg: '#f7f7f7'
+            },
+            halloween: {
+                imgs: [
+                    'https://dinorunner.com/static/images/halloween/offline-sprite-1x-halloween.png',
+                    'https://dinorunner.com/static/images/halloween/offline-sprite-2x-halloween.png'
+                ],
+                bg: '#584766'
+            },
+            wednesday: {
+                imgs: [
+                    'https://dinorunner.com/static/images/wednesday/wednesday1x.png',
+                    'https://dinorunner.com/static/images/wednesday/wednesday2x.png'
+                ],
+                bg: '#f7f7f7'
+            },
+            naruto: {
+                imgs: [
+                    'https://dinorunner.com/static/images/naruto/offline-sprite-1x-naruto.png',
+                    'https://dinorunner.com/static/images/naruto/offline-sprite-2x-naruto.png'
+                ],
+                bg: '#f7f7f7'
+            },
+            naruto2: {
+                imgs: [
+                    'https://trex-runner.com/img/offline-sprite-1x-naruto.png',
+                    'https://trex-runner.com/img/offline-sprite-2x-naruto.png'
+                ],
+                bg: '#e1f7fa'
+            },
+            godzilla: {
+                imgs: [
+                    'https://dinorunner.com/static/images/godzilla/godzilla.png',
+                    'https://dinorunner.com/static/images/godzilla/godzillax2.png'
+                ],
+                bg: '#2e2e2e'
+            },
+            cat: {
+                imgs: [
+                    'https://dinosaur-game.io/game/nyancat/img/cat.png',
+                    'https://dinosaur-game.io/game/nyancat/img/catx2.png'
+                ],
+                bg: '#000'
+            },
+            ninja: {
+                imgs: [
+                    'https://dnery.dev/t-rex-runner/assets/offline-sprite-1x.png',
+                    'https://dnery.dev/t-rex-runner/assets/offline-sprite-2x.png'
+                ],
+                bg: '#f7f7f7'
+            }
+        };
+
+
+        function applyTheme(theme) {
+            const cfg = THEMES[theme];
+            if (!cfg) {
+                console.warn(`Theme inconnu : '${theme}'`);
+                return;
+            }
+            const [src1, src2] = cfg.imgs;
+            document.getElementById('offline-resources-1x').src = src1;
+            document.getElementById('offline-resources-2x').src = src2;
+            document.body.style.backgroundColor = cfg.bg;
+        }
+
+
+        if (!window.__DINOcheat_themes_preloaded) {
+            Object.values(THEMES).forEach(theme => {
+                theme.imgs.forEach(url => {
+                    const img = new Image();
+                    img.src = url;
+                });
+            });
+            window.__DINOcheat_themes_preloaded = true;
+        }
+
+
+        document.addEventListener('keydown', function(event) {
+            const termsPanel = document.getElementById('terms-panel');
+
+            if (event.key === 't' && isShortcutEnabled && termsPanel === null) {
+                toggleMenuPopup();
+            }
+        });
+
+
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+        .super-itck-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 9998;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .super-itck-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.7);
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid black;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: none;
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .super-itck-popup.open {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .super-itck-popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            transition: color 0.3s ease;
+        }
+
+        .super-itck-popup .close-btn:hover {
+            color: #ff4c4c;
+        }
+
+        .super-itck-popup .content {
+            padding-top: 20px;
+            font-size: 20px;
+        }
+
+        .dont-show-again {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .dont-show-again input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .dont-show-again label {
+            cursor: pointer;
+            color: #777;
+        }
+
+        .dont-show-again label:hover {
+            color: #000;
+        }
+
+        `;
+        document.head.appendChild(style);
+
+
+        const overlay = document.createElement('div');
+        overlay.className = 'super-itck-popup-overlay';
+        document.body.appendChild(overlay);
+
+        const popup = document.createElement('div');
+        popup.className = 'super-itck-popup';
+        popup.innerHTML = `
+        <span class="close-btn">&times;</span>
+        <div class="content">
+          ${translate('welcome')}
+          <div class="dont-show-again">
+            <label>
+              <input type="checkbox" id="hidePopupCheckbox">
+              ${translate('dontShowAgain')}
+            </label>
+          </div>
+        </div>
+        `;
+
+        document.body.appendChild(popup);
+
+        async function openPopup() {
+            if (await GM_getValue('hidePopup') === 'true') {
+                toggleMenuPopup();
+                return;
+            }
+
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+                popup.classList.add('open');
+            }, 10);
+        }
+
+        async function closePopup() {
+            popup.classList.remove('open');
+            overlay.style.opacity = '0';
+
+            const hidePopup = document.getElementById('hidePopupCheckbox').checked;
+            if (hidePopup) {
+                await GM_setValue('hidePopup', 'true');
+            }
+
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                popup.style.display = 'none';
+                toggleMenuPopup();
+            }, 300);
+        }
+
+        popup.querySelector('.close-btn').addEventListener('click', closePopup);
+        openPopup();
+
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'v' && isShortcutEnabled) {
+                const userInput = prompt(translate('chooseSpeed'));
+                const speed = parseFloat(userInput);
+                if (!isNaN(speed)) {
+                    Runner.instance_.setSpeed(speed);
+                    document.getElementById('speedInput').value = speed;
+                } else {
+                    alert(translate('invalidSpeed'));
+                }
+            }
+        });
+
+
+        let isWalkingInTheAir = false;
+
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'a' && isShortcutEnabled) {
+
+                if (isWalkingInTheAir) {
+                    Runner.instance_.tRex.groundYPos = 93;
+                    updateButtonText(translate('theAir'));
+                    touche('ArrowUp');
+                } else {
+                    Runner.instance_.tRex.groundYPos = 0;
+                    updateButtonText(translate('theGround'));
+                    touche('ArrowUp');
+                }
+
+                isWalkingInTheAir = !isWalkingInTheAir;
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'k' && isShortcutEnabled) {
+                const userInput = prompt(translate('enterNewScore'));
+                const newScore = parseInt(userInput, 10);
+                if (!isNaN(newScore) && Number.isInteger(newScore) && newScore < 999990) {
+                    Runner.instance_.distanceRan = newScore / Runner.instance_.distanceMeter.config.COEFFICIENT;
+                    document.getElementById('scoreInput').value = newScore;
+                } else {
+                    alert(translate('invalidIntegerScore'));
+                }
+            }
+        });
+
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 's' && isShortcutEnabled) {
+                injectDistanceCode();
+            }
+        });
+    }
+})();
